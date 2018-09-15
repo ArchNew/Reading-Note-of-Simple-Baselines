@@ -19,7 +19,7 @@ When I use the `USE_GT_BBOX`, it will load the gt into the database. The actual 
 This process is responsible for all annotation loading, not just for validation.
 
 - Search in other files \
-After searching all files for 'score', I finally locked down the key line in JointsDataset
+After searching all files for 'score', I finally locked down the key line in JointsDataset.py
 ```python
 score = db_rec['score'] if 'score' in db_rec else 1
 ```
