@@ -16,3 +16,11 @@ When I use the `USE_GT_BBOX`, it will load the gt into the database. The actual 
 
         return rec
 ```
+This process is responsible for all annotation loading, not just for validation.
+
+- Search in other files \
+After searching all files for 'score', I finally locked down the key line in JointsDataset
+```python
+score = db_rec['score'] if 'score' in db_rec else 1
+```
+It seems if I use the setting `USE_GT_BBOX: true`, the system automatically signs 1 to the 'score' section, which means there's no sorting here. I might need to read through cocoapi to make sense of it.
